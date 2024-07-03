@@ -158,6 +158,12 @@ public class SkillCrafting extends SimpleSkill<SkillCrafting.Config> {
             }
         }
         cooldowns.put(player, System.currentTimeMillis());
+        Player p = (Player) e.getWhoClicked();
+
+        Long cooldown = cooldowns.get(p);
+        if (cooldown != null && cooldown + getConfig().cooldownDelay > System.currentTimeMillis())
+            return false;
+        cooldowns.put(p, System.currentTimeMillis());
 
         ItemStack result = e.getInventory().getResult();
         ItemStack cursor = e.getCursor();
