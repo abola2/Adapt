@@ -24,10 +24,7 @@ import com.volmit.adapt.util.Element;
 import com.volmit.adapt.util.Form;
 import com.volmit.adapt.util.Localizer;
 import lombok.NoArgsConstructor;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -123,7 +120,7 @@ public class AgilityWallJump extends SimpleAdaptation<AgilityWallJump.Config> {
                         p.setVelocity(p.getVelocity().setY(getJumpHeight(level)));
                         if (getConfig().showParticles) {
 
-                            p.getWorld().spawnParticle(Particle.BLOCK_CRACK, p.getLocation().clone().add(0, 0.3, 0), 15, 0.1, 0.8, 0.1, 0.1, getStick(p).getBlockData());
+                            p.getWorld().spawnParticle(Particle.BLOCK, p.getLocation().clone().add(0, 0.3, 0), 15, 0.1, 0.8, 0.1, 0.1, getStick(p).getBlockData());
                         }
                     }
                     airjumps.put(p, j);
@@ -138,10 +135,13 @@ public class AgilityWallJump extends SimpleAdaptation<AgilityWallJump.Config> {
 
             if (canStick(p)) {
                 if (p.hasGravity()) {
-                    p.getLocation().getWorld().playSound(p.getLocation(), Sound.ITEM_ARMOR_EQUIP_LEATHER, 1f, 0.89f);
-                    p.getLocation().getWorld().playSound(p.getLocation(), Sound.ITEM_ARMOR_EQUIP_CHAIN, 1f, 1.39f);
-                    if (getConfig().showParticles && getStick(p) != null) {
-                        p.getWorld().spawnParticle(Particle.BLOCK_CRACK, p.getLocation().clone().add(0, 0.3, 0), 15, 0.1, 0.2, 0.1, 0.1, getStick(p).getBlockData());
+                    World world = p.getLocation().getWorld();
+                    if (world != null) {
+                        world.playSound(p.getLocation(), Sound.ITEM_ARMOR_EQUIP_LEATHER, 1f, 0.89f);
+                        world.playSound(p.getLocation(), Sound.ITEM_ARMOR_EQUIP_CHAIN, 1f, 1.39f);
+                        if (getConfig().showParticles && getStick(p) != null) {
+                            p.getWorld().spawnParticle(Particle.BLOCK, p.getLocation().clone().add(0, 0.3, 0), 15, 0.1, 0.2, 0.1, 0.1, getStick(p).getBlockData());
+                        }
                     }
                 }
 

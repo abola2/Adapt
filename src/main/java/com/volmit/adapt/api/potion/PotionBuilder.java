@@ -21,7 +21,7 @@ public class PotionBuilder {
     private String name;
     private Color color;
     private boolean upgraded, extended;
-    private PotionType baseType = PotionType.UNCRAFTABLE;
+    private PotionType baseType = PotionType.MUNDANE;
 
     private PotionBuilder(Type type) {
         this.type = type;

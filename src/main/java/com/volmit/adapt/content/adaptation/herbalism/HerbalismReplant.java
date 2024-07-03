@@ -114,7 +114,7 @@ public class HerbalismReplant extends SimpleAdaptation<HerbalismReplant.Config> 
                 p.getWorld().playSound(p.getLocation(), Sound.ITEM_SHOVEL_FLATTEN, 1f, 0.66f);
                 p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BAMBOO_SAPLING_BREAK, 1f, 0.66f);
                 if (getConfig().showParticles) {
-                    p.spawnParticle(Particle.VILLAGER_HAPPY, p.getLocation().clone().add(0.5, 0.5, 0.5), getLevel(p) * 3, 0.3 * getLevel(p), 0.3 * getLevel(p), 0.3 * getLevel(p), 0.9);
+                    p.spawnParticle(Particle.HAPPY_VILLAGER, p.getLocation().clone().add(0.5, 0.5, 0.5), getLevel(p) * 3, 0.3 * getLevel(p), 0.3 * getLevel(p), 0.3 * getLevel(p), 0.9);
                 }
             } else {
                 hit(p, e.getClickedBlock());

@@ -52,7 +52,7 @@ public class BrewingFatigue extends SimpleAdaptation<BrewingFatigue.Config> {
                 .result(PotionBuilder.of(PotionBuilder.Type.REGULAR)
                         .setName("Bottled Fatigue")
                         .setColor(Color.fromRGB(0, 66, 0))
-                        .addEffect(PotionEffectType.SLOW_DIGGING, 1200, 1, true, true, true)
+                        .addEffect(PotionEffectType.MINING_FATIGUE, 1200, 1, true, true, true)
                         .build())
                 .build());
         registerBrewingRecipe(BrewingRecipe.builder()
@@ -64,7 +64,7 @@ public class BrewingFatigue extends SimpleAdaptation<BrewingFatigue.Config> {
                 .result(PotionBuilder.of(PotionBuilder.Type.REGULAR)
                         .setName("Bottled Fatigue 2")
                         .setColor(Color.fromRGB(0, 66, 0))
-                        .addEffect(PotionEffectType.SLOW_DIGGING, 600, 2, true, true, true)
+                        .addEffect(PotionEffectType.MINING_FATIGUE, 600, 2, true, true, true)
                         .build())
                 .build());
     }

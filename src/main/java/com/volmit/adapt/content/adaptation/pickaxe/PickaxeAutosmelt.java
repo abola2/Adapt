@@ -53,8 +53,8 @@ public class PickaxeAutosmelt extends SimpleAdaptation<PickaxeAutosmelt.Config> 
     static void autosmeltBlockDTI(Block b, Player p) {
         int fortune = 1;
         Random random = new Random();
-        if (p.getInventory().getItemInMainHand().getEnchantments().get(Enchantment.LOOT_BONUS_BLOCKS) != null) {
-            fortune = p.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS) + (random.nextInt(3));
+        if (p.getInventory().getItemInMainHand().getEnchantments().get(Enchantment.FORTUNE) != null) {
+            fortune = p.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.FORTUNE) + (random.nextInt(3));
 
         }
         switch (b.getType()) {
@@ -100,8 +100,8 @@ public class PickaxeAutosmelt extends SimpleAdaptation<PickaxeAutosmelt.Config> 
     static void autosmeltBlock(Block b, Player p) {
         int fortune = 1;
         Random random = new Random();
-        if (p.getInventory().getItemInMainHand().getEnchantments().get(Enchantment.LOOT_BONUS_BLOCKS) != null) {
-            fortune = p.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS) + (random.nextInt(3));
+        if (p.getInventory().getItemInMainHand().getEnchantments().get(Enchantment.FORTUNE) != null) {
+            fortune = p.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.FORTUNE) + (random.nextInt(3));
 
         }
         switch (b.getType()) {

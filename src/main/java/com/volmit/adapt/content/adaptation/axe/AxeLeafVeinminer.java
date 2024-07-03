@@ -125,7 +125,7 @@ public class AxeLeafVeinminer extends SimpleAdaptation<AxeLeafVeinminer.Config> 
                             }
                         }
                         if (getConfig().showParticles) {
-                            this.vfxCuboidOutline(b, Particle.ENCHANTMENT_TABLE);
+                            this.vfxCuboidOutline(b, Particle.ENCHANT);
                         }
                     }
                 });

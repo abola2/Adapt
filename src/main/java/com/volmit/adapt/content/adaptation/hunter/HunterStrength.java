@@ -74,14 +74,14 @@ public class HunterStrength extends SimpleAdaptation<HunterStrength.Config> {
 
                 } else {
                     addPotionStacks(p, PotionEffectType.HUNGER, getConfig().baseHungerFromLevel - getLevel(p), getConfig().baseHungerDuration * getLevel(p), getConfig().stackHungerPenalty);
-                    addPotionStacks(p, PotionEffectType.INCREASE_DAMAGE, getLevel(p), getConfig().baseEffectbyLevel * getLevel(p), getConfig().stackBuff);
+                    addPotionStacks(p, PotionEffectType.STRENGTH, getLevel(p), getConfig().baseEffectbyLevel * getLevel(p), getConfig().stackBuff);
                 }
             } else {
                 if (getConfig().consumable != null && Material.getMaterial(getConfig().consumable) != null) {
                     Material mat = Material.getMaterial(getConfig().consumable);
                     if (mat != null && p.getInventory().contains(mat)) {
                         p.getInventory().removeItem(new ItemStack(mat, 1));
-                        addPotionStacks(p, PotionEffectType.INCREASE_DAMAGE, getLevel(p), getConfig().baseEffectbyLevel * getLevel(p), getConfig().stackBuff);
+                        addPotionStacks(p, PotionEffectType.STRENGTH, getLevel(p), getConfig().baseEffectbyLevel * getLevel(p), getConfig().stackBuff);
                     } else {
                         if (getConfig().poisonPenalty) {
                             addPotionStacks(p, PotionEffectType.POISON, getConfig().basePoisonFromLevel - getLevel(p), getConfig().baseHungerDuration, getConfig().stackPoisonPenalty);

@@ -48,11 +48,11 @@ public class BrewingHaste extends SimpleAdaptation<BrewingHaste.Config> {
                 .brewingTime(320)
                 .fuelCost(16)
                 .ingredient(Material.AMETHYST_SHARD)
-                .basePotion(PotionBuilder.vanilla(PotionBuilder.Type.REGULAR, PotionType.SPEED, false, false))
+                .basePotion(PotionBuilder.vanilla(PotionBuilder.Type.REGULAR, PotionType.SWIFTNESS, false, false))
                 .result(PotionBuilder.of(PotionBuilder.Type.REGULAR)
                         .setName("Bottled Haste")
                         .setColor(Color.YELLOW)
-                        .addEffect(PotionEffectType.FAST_DIGGING, 1200, 1, true, true, true)
+                        .addEffect(PotionEffectType.HASTE, 1200, 1, true, true, true)
                         .build())
                 .build());
         registerBrewingRecipe(BrewingRecipe.builder()
@@ -60,11 +60,11 @@ public class BrewingHaste extends SimpleAdaptation<BrewingHaste.Config> {
                 .brewingTime(320)
                 .fuelCost(32)
                 .ingredient(Material.AMETHYST_BLOCK)
-                .basePotion(PotionBuilder.vanilla(PotionBuilder.Type.REGULAR, PotionType.SPEED, false, false))
+                .basePotion(PotionBuilder.vanilla(PotionBuilder.Type.REGULAR, PotionType.SWIFTNESS, false, false))
                 .result(PotionBuilder.of(PotionBuilder.Type.REGULAR)
                         .setName("Bottled Haste 2")
                         .setColor(Color.YELLOW)
-                        .addEffect(PotionEffectType.FAST_DIGGING, 600, 2, true, true, true)
+                        .addEffect(PotionEffectType.HASTE, 600, 2, true, true, true)
                         .build())
                 .build());
     }

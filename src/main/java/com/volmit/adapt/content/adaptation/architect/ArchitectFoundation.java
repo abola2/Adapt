@@ -232,7 +232,7 @@ public class ArchitectFoundation extends SimpleAdaptation<ArchitectFoundation.Co
         });
         block.getWorld().playSound(block.getLocation(), Sound.BLOCK_DEEPSLATE_BREAK, 1.0f, 1.0f);
         if (getConfig().showParticles) {
-            vfxCuboidOutline(block, Particle.ENCHANTMENT_TABLE);
+            vfxCuboidOutline(block, Particle.ENCHANT);
         }
     }
 

@@ -219,12 +219,14 @@ public class UIElement implements Element {
             im.setDisplayName(getName());
             im.setLore(getLore().copy());
             if (isEnchanted()) {
-                im.addEnchant(Enchantment.DURABILITY, 1, true);
+                im.addEnchant(Enchantment.UNBREAKING, 1, true);
             }
             // Hide all attributes and enchants and stuff!
             im.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             im.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-            im.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+            im.addItemFlags(ItemFlag.HIDE_ARMOR_TRIM);
+            im.addItemFlags(ItemFlag.HIDE_PLACED_ON);
+            im.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             im.addItemFlags(ItemFlag.HIDE_DYE);
             im.addItemFlags(ItemFlag.HIDE_DESTROYS);
             im.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);

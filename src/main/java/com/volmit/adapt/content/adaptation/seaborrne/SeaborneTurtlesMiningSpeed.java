@@ -56,7 +56,7 @@ public class SeaborneTurtlesMiningSpeed extends SimpleAdaptation<SeaborneTurtles
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (player.isInWater() && hasAdaptation(player)) {
                 if (player.getLocation().getBlock().isLiquid()) {
-                    J.s(() -> player.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 62, 1, false, false)));
+                    J.s(() -> player.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 62, 1, false, false)));
                 }
             }
         }

@@ -107,7 +107,7 @@ public class Adapt extends VolmitPlugin {
         commandManager.suggestionProviderRegistry().register(new ParticleSuggestionProvider());
         commandManager.suggestionProviderRegistry().register(new BooleanSuggestionProvider());
 
-        NMS.init();
+        //Todo check nms version
         Localizer.updateLanguageFile();
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new PapiExpansion().register();

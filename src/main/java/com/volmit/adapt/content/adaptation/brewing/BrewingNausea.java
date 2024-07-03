@@ -52,7 +52,7 @@ public class BrewingNausea extends SimpleAdaptation<BrewingNausea.Config> {
                 .result(PotionBuilder.of(PotionBuilder.Type.REGULAR)
                         .setName("Bottled Nausea")
                         .setColor(Color.LIME)
-                        .addEffect(PotionEffectType.CONFUSION, 600, 1, true, true, true)
+                        .addEffect(PotionEffectType.NAUSEA, 600, 1, true, true, true)
                         .build())
                 .build());
         registerBrewingRecipe(BrewingRecipe.builder()
@@ -64,7 +64,7 @@ public class BrewingNausea extends SimpleAdaptation<BrewingNausea.Config> {
                 .result(PotionBuilder.of(PotionBuilder.Type.REGULAR)
                         .setName("Bottled Nausea 2")
                         .setColor(Color.LIME)
-                        .addEffect(PotionEffectType.CONFUSION, 300, 2, true, true, true)
+                        .addEffect(PotionEffectType.NAUSEA, 300, 2, true, true, true)
                         .build())
                 .build());
     }

@@ -109,7 +109,7 @@ public class SkillTragOul extends SimpleSkill<SkillTragOul.Config> {
                 if (getConfig().showParticles) {
                     CloudEffect ce = new CloudEffect(Adapt.instance.adaptEffectManager);
                     ce.mainParticle = Particle.ASH;
-                    ce.cloudParticle = Particle.REDSTONE;
+                    ce.cloudParticle = Particle.DUST_COLOR_TRANSITION;
                     ce.duration = 10000;
                     ce.iterations = 1000;
                     ce.setEntity(p);

@@ -94,7 +94,7 @@ public class BrewingManager implements Listener {
         }
         for (int i = 0; i < 3; i++) {
             ItemStack s = e.getContents().getItem(i);
-            if (s == null || ((PotionMeta) s.getItemMeta()).getBasePotionData().getType() != PotionType.UNCRAFTABLE) {
+            if (s == null || ((PotionMeta) s.getItemMeta()).getBasePotionType() != PotionType.MUNDANE) {
                 continue;
             }
             ItemStack newStack = s.clone();

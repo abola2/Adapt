@@ -102,7 +102,6 @@ public interface MultiItem {
     default void setItems(ItemStack multi, List<ItemStack> itemStacks) {
         setMultiItemData(multi, MultiItemData.builder()
                 .rawItems(itemStacks.stream().filter(this::supportsItem)
-                        .map(i -> NMS.get().serializeStack(i))
                         .collect(Collectors.toList()))
                 .build());
     }
@@ -169,14 +168,11 @@ public interface MultiItem {
     @AllArgsConstructor
     class MultiItemData {
         @Singular
-        List<String> rawItems;
+        List<ItemStack> rawItems;
 
         List<ItemStack> getItems() {
-            return rawItems.stream().map(i -> NMS.get().deserializeStack(i)).collect(Collectors.toList());
+            return rawItems;
         }
 
-        void setItems(List<ItemStack> is) {
-            rawItems = is.stream().map(i -> NMS.get().serializeStack(i)).collect(Collectors.toList());
-        }
     }
 }
