@@ -29,7 +29,6 @@ import com.volmit.adapt.command.CommandAdapt;
 import com.volmit.adapt.content.gui.SkillsGui;
 import com.volmit.adapt.content.protector.*;
 import com.volmit.adapt.nms.GlowingEntities;
-import com.volmit.adapt.nms.NMS;
 import com.volmit.adapt.util.*;
 import com.volmit.adapt.util.command.*;
 import com.volmit.adapt.util.command.suggest.*;
@@ -37,7 +36,6 @@ import com.volmit.adapt.util.secret.SecretSplash;
 import de.slikey.effectlib.EffectManager;
 import io.github.mqzn.commands.SpigotCommandManager;
 import io.github.mqzn.commands.annotations.AnnotationParser;
-import io.github.mqzn.commands.base.manager.CommandExecutionCoordinator;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
@@ -95,7 +93,7 @@ public class Adapt extends VolmitPlugin {
     @Override
     public void start() {
         audiences = BukkitAudiences.create(this);
-        commandManager = new SpigotCommandManager(this, CommandExecutionCoordinator.Type.SYNC);
+        commandManager = new SpigotCommandManager(this);
         parser = new AnnotationParser<>(commandManager);
         commandManager.suggestionProviderRegistry().register(new AdaptSkillListingProvider());
         commandManager.suggestionProviderRegistry().register(new AdaptSkillProvider());
